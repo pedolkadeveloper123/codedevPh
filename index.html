@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Test</title>
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    .terminal {
+      padding: 20px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .line {
+      margin: 0;
+    }
+    .green {
+      color: #00ff00;
+    }
+    .blue {
+      color: #00aaff;
+    }
+    .yellow {
+      color: #ffaa00;
+    }
+    .blink {
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal" id="terminal">
+    <p class="line"><span class="green">user@devPedrHenrique-machine</span>:<span class="blue">~</span>$ npm start</p>
+    <p class="line">> Starting the server...</p>
+    <p class="line">> Listening on port <span class="yellow">3000</span></p>
+    <p class="line">> Compiling <span class="blue">App.js</span>...</p>
+    <p class="line"><span class="green">✔ Success:</span> Build completed!</p>
+    <p class="line"><span class="yellow">Warning:</span> Deprecated API used in <span class="blue">utils.js</span></p>
+    <p class="line"><span class="blue">GET</span> /api/data <span class="green">200 OK</span></p>
+    <p class="line"><span class="blue">POST</span> /api/login <span class="yellow">401 Unauthorized</span></p>
+    <p class="line"><span class="blue">GET</span> /assets/logo.png <span class="green">304 Not Modified</span></p>
+    <p class="line">_</p>
+  </div>
+  <script>
+    const terminal = document.getElementById('terminal');
+    const cursor = document.createElement('span');
+    cursor.className = 'blink';
+    cursor.textContent = '_';
+    terminal.appendChild(cursor);
+
+    setInterval(() => {
+      const line = document.createElement('p');
+      line.className = 'line';
+      line.textContent = 'New server activity...';
+      terminal.insertBefore(line, cursor);
+      terminal.scrollTop = terminal.scrollHeight;
+    }, 8000);
+  </script>
+</body>
+</html>
