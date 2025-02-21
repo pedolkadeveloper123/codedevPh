@@ -41,11 +41,12 @@
 </head>
 <body>
   <div class="terminal" id="terminal">
-    <p class="line"><span class="green">user@devPedrHenrique-machine</span>:<span class="blue">~</span>$ npm start</p>
+    <p class="line"><span class="green">user@DevPedrHenrique-machine</span>:<span class="blue">~</span>$ npm start</p>
     <p class="line">> Starting the server...</p>
     <p class="line">> Listening on port <span class="yellow">3000</span></p>
     <p class="line">> Compiling <span class="blue">App.js</span>...</p>
     <p class="line"><span class="green">✔ Success:</span> Build completed!</p>
+    <p class="line"><span class="red">X Faleid Docs:</span> Build completed!</p>
     <p class="line"><span class="yellow">Warning:</span> Deprecated API used in <span class="blue">utils.js</span></p>
     <p class="line"><span class="blue">GET</span> /api/data <span class="green">200 OK</span></p>
     <p class="line"><span class="blue">POST</span> /api/login <span class="yellow">401 Unauthorized</span></p>
@@ -62,7 +63,7 @@
     setInterval(() => {
       const line = document.createElement('p');
       line.className = 'line';
-      line.textContent = 'New server activity...';
+      line.textContent = 'Analizando dados do sistema...';
       terminal.insertBefore(line, cursor);
       terminal.scrollTop = terminal.scrollHeight;
     }, 3000);
